@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Quicksand:wght@600;700&display=swap');
+
+:root {
+  --bg-gray: #454545;        
+  --container-bg: #3a3a3a;   
+  --text-light: #ffffff;     
+  --border-heavy: 4px solid #111111; 
+
+  /* The COMPLETE 10-Color Retro Palette */
+  --c-cyan: #00e5ff;
+  --c-pink: #ff2a6d;
+  --c-orange: #ff6a00;
+  --c-lime: #39ff14;
+  --c-red: #ff003c;
+  --c-purple: #b400ff;
+  --c-yellow: #fca311;
+  --c-mint: #00f0b5;
+  --c-bubblegum: #ff7ea5;
+  --c-indigo: #3a0ca3;
+
+  /* Default theme color if a wrapper isn't specified */
+  --theme-accent: var(--c-cyan);
+}
+
+body {
+  background-color: var(--bg-gray);
+  color: var(--text-light);
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Bagel Fat One', system-ui;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* --- THEME WRAPPERS --- */
+.theme-cyan { --theme-accent: var(--c-cyan); }
+.theme-pink { --theme-accent: var(--c-pink); }
+.theme-orange { --theme-accent: var(--c-orange); }
+.theme-lime { --theme-accent: var(--c-lime); }
+.theme-red { --theme-accent: var(--c-red); }
+.theme-purple { --theme-accent: var(--c-purple); }
+.theme-yellow { --theme-accent: var(--c-yellow); }
+.theme-mint { --theme-accent: var(--c-mint); }
+.theme-bubblegum { --theme-accent: var(--c-bubblegum); }
+.theme-indigo { --theme-accent: var(--c-indigo); }
+
+/* --- VIBRANT GRADIENT TEXT --- */
+.gradient-text {
+  background: linear-gradient(90deg, var(--c-cyan), var(--c-pink), var(--c-yellow));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* --- LOCKED TOP NAVIGATION --- */
+.top-nav {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-gray);
+  border-bottom: var(--border-heavy);
+  z-index: 100;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+input.search-bar {
+  width: 250px;
+  margin-bottom: 0; 
+  padding: 8px 15px;
+  font-size: 1rem;
+  border-radius: 20px;
+}
+
+/* --- HERO & LOGO --- */
+.hero-section {
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 80px; 
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.floating-logo {
+  width: 90%;
+  max-width: 800px; 
+  animation: float 6s ease-in-out infinite;
+}
+
+/* --- SCROLL CONTENT --- */
+.scroll-content {
+  min-height: 100vh;
+  padding: 80px 50px;
+  text-align: center;
+}
+
+.scroll-content h2 {
+  font-size: 3.5rem; 
+  filter: drop-shadow(3px 3px 0px #111);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.subheading-text {
+  font-size: 1.8rem;
+  font-family: 'Bagel Fat One', system-ui;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: var(--theme-accent);
+}
+
+/* --- FORMS & INPUTS --- */
+label {
+  display: block;
+  font-family: 'Bagel Fat One', system-ui;
+  font-weight: 400;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+  color: var(--text-light);
+}
+
+input, select {
+  width: 100%;
+  background: #2b2b2b;
+  border: var(--border-heavy);
+  border-radius: 12px;
+  color: var(--text-light);
+  font-family: inherit;
+  font-size: 1.1rem;
+  padding: 12px 15px;
+  margin-bottom: 22px;
+  box-sizing: border-box;
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5);
+  transition: all 0.2s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--theme-accent);
+  box-shadow: 0 0 10px var(--theme-accent);
+}
+
+/* --- BUTTONS --- */
+.solid-btn {
+  background: var(--theme-accent);
+  color: #111;
+  border: var(--border-heavy);
+  border-radius: 25px;
+  padding: 14px 28px;
+  font-size: 1.2rem;
+  font-family: 'Bagel Fat One', system-ui;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px #111; 
+  transition: all 0.1s ease;
+}
+
+.solid-btn:hover {
+  filter: brightness(1.1);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #111;
+}
+
+.solid-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #111;
+}
+
+/* Clean text links (Forces removal of borders/shadows) */
+button.text-link {
+  background: none !important;
+  color: var(--text-light) !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  font-size: 1rem !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px !important;
+  font-family: 'Quicksand', sans-serif !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+}
+
+button.text-link:hover {
+  color: var(--theme-accent) !important;
+  transform: none !important;
+}
+
+/* --- CONTAINERS & ALERTS --- */
+.auth-container {
+  max-width: 450px;
+  margin: 120px auto 60px auto;
+  background: var(--container-bg);
+  padding: 40px;
+  border-radius: 20px; 
+  border: var(--border-heavy);
+  box-shadow: 8px 8px 0px #111;
+}
+
+.notice-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px dashed var(--theme-accent);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 25px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #ffb3ba;
+}
+
+/* --- DIARY FEED --- */
+.diary-card {
+  background: #2b2b2b;
+  border: var(--border-heavy);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  text-align: left;
+  box-shadow: 4px 4px 0px #111;
+  transition: transform 0.2s ease;
+}
+
+.diary-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #111;
+}
+
+.diary-card h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--theme-accent);
+  font-family: 'Bagel Fat One', system-ui;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.diary-meta {
+  font-family: 'monospace';
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.diary-card p {
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- COFFEE SPECS GRID --- */
+.coffee-specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #aaa;
+  font-family: 'Bagel Fat One', system-ui;
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+
+.spec-value {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-light);
+}
+
+.tasting-notes {
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+/* --- MODAL OVERLAY --- */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: var(--container-bg);
+  padding: 40px;
+  border-radius: 15px;
+  border: var(--border-heavy);
+  box-shadow: 8px 8px 0px #111;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: var(--theme-accent);
+  font-size: 2rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.5rem;
+  font-family: 'Bagel Fat One', system-ui;
+  cursor: pointer;
+}
+
+/* --- DIARY FILTER BAR --- */
+.filter-bar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+}
+
+.filter-bar select, .filter-bar input {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  padding: 10px;
+}
+

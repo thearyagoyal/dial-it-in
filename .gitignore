@@ -1,0 +1,12 @@
+# Frontend ignores
+frontend/node_modules/
+frontend/dist/
+
+# Backend ignores
+backend/venv/
+backend/__pycache__/
+backend/*.db
+
+# General security
+.env
+.DS_Store
